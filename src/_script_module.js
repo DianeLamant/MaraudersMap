@@ -1,6 +1,6 @@
 
 
-import SweatyPromoClient from '../node_modules/sweaty-promo-client/dist/sweaty-promo-client.js'
+import SweatyPromoClient from 'sweaty-promo-client/dist/sweaty-promo-client'
 
 console.log(SweatyPromoClient)
 

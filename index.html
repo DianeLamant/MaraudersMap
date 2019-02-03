@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="./node_modules/sweaty-promo-client/dist/sweaty-promo-client.js" charset="utf-8"></script>
-    <script src="./src/script.js"></script>
+    <script src="./src/display_helper.js" charset="utf-8"></script>
+    <script src="./src/script.js" charset="utf-8" defer></script>
 </head>
+
 <body>
 
-    <button onclick="startButton()">START</button>
-    
+    <h3>La promo en sueur</h3>
+
+    <button id="startButton" onclick="startButton()">START</button>
+
+    <pre id="displayZone"></pre>
+
+    <button onclick="leftButton()">GAUCHE</button>
+
+    <button onclick="rightButton()">DROITE</button>
+
+    <h1 id="gameOverMessage" style="visibility:hidden">EN SUEUR !</h1>
+
 </body>
+
 </html>
