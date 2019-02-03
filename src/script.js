@@ -4,10 +4,12 @@ var game = new SweatyPromoClient.offline()
 // zone d'affichage
 var displayZone = document.getElementById('displayZone')
 
+// nouvelle matrice des gouttes
 game.on('matrix', (matrix) => {
     updateDisplay(matrix)
 })
 
+// perdu, en sueur
 game.on('sweaty', () => {
     document.getElementById('gameOverMessage').style.visibility = 'visible'
     document.getElementById('startButton').style.visibility = 'visible'
@@ -22,29 +24,31 @@ function updateDisplay(matrix) {
     // création de la chaine d'affichage de la matrice
     var matrixString = null
 
-
     matrixString = DisplayHelper.makeMatrixString(matrix, game.getPosition())
-
 
     // actualisation de l'affichage
     displayZone.innerHTML = matrixString
 }
 
-// authentification
+// bouton de lancement
 function startButton() {
     document.getElementById('gameOverMessage').style.visibility = 'hidden'
     document.getElementById('startButton').style.visibility = 'hidden'
-
+    //
     game.start()
 }
 
+// bouton vers la gauche
 function leftButton() {
     game.left()
+    //
     updateDisplay()
 }
 
+// bouton vers la droite
 function rightButton() {
     game.right()
+    //
     updateDisplay()
 }
 
