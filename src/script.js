@@ -1,19 +1,18 @@
-const socket = io('http://localhost:3000/')
+// instance de la class du jeu
+var game = new SweatyPromoClient.offline()
 
-const SweatyPromo = require('./class/SweatyPromo')
 
-// nouvelle connection
-socket.on('connect', () => {
-    console.log('conn')
+game.on('matrix', (matrix) => {
+    console.log('new matrix', matrix)
 })
 
-// matrix
-socket.on('matrix', (matrix) => {
-    console.log('matrix', matrix)
+game.on('sweaty', () => {
+    console.log('En sueur !')
 })
 
 
 
-var sp = new SweatyPromo()
-
-sp.testEvent()
+// authentification
+function startButton () {
+    game.start()
+}
