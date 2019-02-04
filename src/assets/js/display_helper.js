@@ -5,10 +5,12 @@ const VALUE_DROPLET = 1
 const VALUE_PLAYER = 2
 const VALUE_DROPLET_ON_PLAYER = 3
 
-const CHAR_EMPTY = ' '
-const CHAR_DROPLET = '\ud83c\udf22' // \ud83c\udf22
-const CHAR_PLAYER = '👁'
-const CHAR_DROPLET_ON_PLAYER = '#'
+const CHAR_EMPTY = '<img src="./src/assets/img/vide.png" width="50px"></img>'
+const CHAR_DROPLET = '<img src="./src/assets/img/caca.png" width="50px"></img>'
+const CHAR_PLAYER = '<img src="./src/assets/img/happy.png" width="50px"></img>'
+const CHAR_DROPLET_ON_PLAYER = '<img src="./src/assets/img/sweaty.png" width="50px"></img>'
+
+
 
 // helper d'affichage
 const DisplayHelper = {
@@ -31,10 +33,10 @@ const DisplayHelper = {
                 for (var value of line) {
                     switch (value) {
                         case VALUE_EMPTY:
-                            lineString += '[' + CHAR_EMPTY + ']'
+                            lineString += '' + CHAR_EMPTY + ''
                             break;
                         case VALUE_DROPLET:
-                            lineString += '[' + CHAR_DROPLET + ']'
+                            lineString += '' + CHAR_DROPLET + ''
                             break;
                         default:
                             lineString += '[?]'
@@ -59,10 +61,10 @@ const DisplayHelper = {
             if (i != position) {
                 switch (value) {
                     case VALUE_EMPTY:
-                        lineString += '[' + CHAR_EMPTY + ']'
+                        lineString += '' + CHAR_EMPTY + ''
                         break;
                     case VALUE_DROPLET:
-                        lineString += '[' + CHAR_DROPLET + ']'
+                        lineString += '' + CHAR_DROPLET + ''
                         break;
 
                     default:
@@ -70,9 +72,9 @@ const DisplayHelper = {
                 }
             } else {
                 if (value == VALUE_DROPLET) {
-                    lineString += '[' + CHAR_DROPLET_ON_PLAYER + ']'
+                    lineString += '' + CHAR_DROPLET_ON_PLAYER + ''
                 } else {
-                    lineString += '[' + CHAR_PLAYER + ']'
+                    lineString += '' + CHAR_PLAYER + ''
                 }
             }
 

@@ -12,6 +12,8 @@ game.on('matrix', (matrix) => {
 // perdu, en sueur
 game.on('sweaty', () => {
     document.getElementById('gameOverMessage').style.visibility = 'visible'
+    document.getElementById('gameOverMessage').style = '-webkit-animation : unzoom 0.5s';
+    // document.getElementById('gameOverMessage').style = '-webkit-animation : shake 0.7s';
     document.getElementById('startButton').style.visibility = 'visible'
     console.log('En sueur !')
 })
@@ -33,6 +35,7 @@ function updateDisplay(matrix) {
 // bouton de lancement
 function startButton() {
     document.getElementById('gameOverMessage').style.visibility = 'hidden'
+    // document.getElementById('gameOverMessage').style = '';
     document.getElementById('startButton').style.visibility = 'hidden'
     //
     game.start()

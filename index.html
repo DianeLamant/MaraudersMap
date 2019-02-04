@@ -6,24 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
     <script src="./node_modules/sweaty-promo-client/dist/sweaty-promo-client.js" charset="utf-8"></script>
-    <script src="./src/display_helper.js" charset="utf-8"></script>
-    <script src="./src/script.js" charset="utf-8" defer></script>
+    <script src="./src/assets/js/display_helper.js" charset="utf-8"></script>
+    <script src="./src/assets/js/script.js" charset="utf-8" defer></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+
 </head>
 
 <body>
 
     <h3>La promo en sueur</h3>
 
-    <button id="startButton" onclick="startButton()">START</button>
+    <div id="game">
+        <button id="startButton" class="btn btn-outline-primary" onclick="startButton()">START</button>
 
-    <pre id="displayZone"></pre>
+        <pre id="displayZone"></pre>
 
-    <button onclick="leftButton()">GAUCHE</button>
+        <button class="btn btn-outline-success" onclick="leftButton()">GAUCHE</button>
 
-    <button onclick="rightButton()">DROITE</button>
+        <button class="btn btn-outline-danger" onclick="rightButton()">DROITE</button>
+    </div>
 
     <h1 id="gameOverMessage" style="visibility:hidden">EN SUEUR !</h1>
+
 
 </body>
 
