@@ -13,7 +13,6 @@ game.on('matrix', (matrix) => {
 game.on('sweaty', () => {
     document.getElementById('gameOverMessage').style.visibility = 'visible'
     document.getElementById('gameOverMessage').style = '-webkit-animation : unzoom 0.5s';
-    // document.getElementById('gameOverMessage').style = '-webkit-animation : shake 0.7s';
     document.getElementById('startButton').style.visibility = 'visible'
     console.log('En sueur !')
 })
