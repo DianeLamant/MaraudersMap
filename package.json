@@ -9,6 +9,7 @@
   "author": "Damien",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.3.1",
     "sweaty-promo-client": "gitlab:simplon-grenoble-promo-1-formateurs/sweaty-promo-client"
   }
 }

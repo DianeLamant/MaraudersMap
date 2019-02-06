@@ -1,39 +1,40 @@
-let matrice = [
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]
-];
+var game = new SweatyPromoClient.offline()
+
 let vide = "./src/assets/img/vide.png";
 let caca = "./src/assets/img/caca.png";
-var x = [0, 1, 2, 3, 4];
-var chooseX;
+let smiley = "./src/assets/img/happy.png";
+var wherePlayer = document.querySelector("img[src='./src/assets/img/happy.png']");
 
-function premierCaca() {
-    var chooseX = x[Math.floor(Math.random() * x.length)];
 
-    setTimeout(() => {
-        console.log(chooseX)
-        matrice[0][chooseX] = 1;
-        console.log(matrice)
-        console.log(document.getElementById("0").getElementsByClassName(chooseX)[0])
-        monImg = document.getElementById("0").getElementsByClassName(chooseX)[0];
-        monImg.src = caca;
-    }, 1000);
-    setTimeout(() => {
-        matrice[0][chooseX] = 0;
-        matrice[1][chooseX] = 1;
-        monImg.src = vide
-        document.getElementById("1").getElementsByClassName(chooseX)[0].src = caca;
-        premierCaca()
-    }, 3000);
-}
-
-premierCaca();
+wherePlayer.src = smiley;
+let getClass = wherePlayer.className;
 
 game.on('matrix', (matrix) => {
-
+    for (let x = 0; x < matrix.length; x++) {
+        for (let y = 0; y < matrix[x].length; y++) {
+            if (matrix[x][y] == 1) {
+                document.getElementById(x).getElementsByClassName(y)[0].src = caca;
+            } else if (matrix[x][y] == 0) {
+                document.getElementById(x).getElementsByClassName(y)[0].src = vide;
+            } else if (matrix[x][y] == 2)
+                document.getElementById(x).getElementsByClassName(y)[0].src = smiley;
+        }
+    }
+    console.log(matrix)
+    console.log(wherePlayer);
+    console.log(getClass)
 })
+
+function leftButton() {
+    if (wherePlayer.className < 5 && wherePlayer.className >= 0) {
+        wherePlayer.src = vide;
+        let newPlayer = wherePlayer.className - 1;
+        let whereNewPlayer = document.getElementById(7).getElementsByClassName(newPlayer)[0];
+        console.log(whereNewPlayer)
+        whereNewPlayer.src = smiley;
+    }
+}
+
+function rightButton() {
+    game.right()
+}

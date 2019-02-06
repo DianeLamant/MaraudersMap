@@ -32,10 +32,6 @@ h3 {
     justify-content: center;
 }
 
-img {
-    border: 1px solid black;
-}
-
 
 @-webkit-keyframes Gradient {
 	0% {
