@@ -32,8 +32,12 @@ h3 {
     justify-content: center;
 }
 
+#btnDirection {
+    visibility: hidden;
+}
+
 #gameOver {
-    padding-top: 20%;
+    padding-top: 10%;
     display: none;
 }
 
@@ -42,7 +46,7 @@ h3 {
 }
 
 #gameOverMessage {
-    font-size: 6rem;
+    font-size: 8rem;
     padding-top: 30px;
 }
 
@@ -118,6 +122,11 @@ h3 {
     .btn {
         font-size: 3.5rem;
     }
+
+    #gameOver {
+        padding-top: 25%;
+    }
+    
 }
 
 @media screen and (max-width: 425px) {

@@ -23,7 +23,10 @@
     <h3>La promo en sueur</h3>
 
     <div id="game">
-        <button id="startButton" class="btn btn-outline-primary" onclick="startButton()">START</button>
+        <div id="btnFormat">
+            <button id="startButton" class="btn btn-outline-primary" onclick="buttonJouer()">JOUER</button>
+            <button id="startButton" class="btn btn-outline-primary" onclick="buttonIA()">IA</button>
+        </div>
 
         <div id="displayZone">
             <div id="0" class="row">
@@ -83,10 +86,11 @@
                 <div><img class="4" src="./src/assets/img/vide.png" width="50px" alt=""></div>
             </div>
         </div>
+        <div id="btnDirection">
+            <button class="btn btn-outline-success" onclick="leftButton()">GAUCHE</button>
 
-        <button class="btn btn-outline-success" onclick="leftButton()">GAUCHE</button>
-
-        <button class="btn btn-outline-danger" onclick="rightButton()">DROITE</button>
+            <button class="btn btn-outline-danger" onclick="rightButton()">DROITE</button>
+        </div>
     </div>
 
     <div id="gameOver">
