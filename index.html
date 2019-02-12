@@ -10,7 +10,6 @@
     <script src="./node_modules/sweaty-promo-client/dist/sweaty-promo-client.js" charset="utf-8"></script>
     <script src="./src/assets/js/newscript.js" charset="utf-8" defer></script>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
-    _
     <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
@@ -23,10 +22,6 @@
     <h3 id="score">La promo en sueur</h3>
 
     <div id="game">
-        <div id="btnFormat">
-            <button id="startButton" class="btn btn-outline-primary" onclick="buttonJouer()">JOUER</button>
-            <button id="startButton" class="btn btn-outline-primary" onclick="buttonIA()">IA</button>
-        </div>
 
         <div id="displayZone">
             <div id="0" class="row">
@@ -86,15 +81,20 @@
                 <div><img class="4" src="./src/assets/img/vide.png" width="50px" alt=""></div>
             </div>
         </div>
-        <div id="btnDirection">
-            <button class="btn btn-outline-success" onclick="leftButton()">GAUCHE</button>
+        <div id="btnFormat">
+            <button id="startButton" onclick="buttonJouer()">Jouer</button>
+            <button id="startButton" onclick="buttonIA()">IA</button>
+        </div>
 
-            <button class="btn btn-outline-danger" onclick="rightButton()">DROITE</button>
+        <div id="btnDirection">
+            <button onclick="leftButton()">Gauche</button>
+
+            <button onclick="rightButton()">Droite</button>
         </div>
     </div>
 
     <div id="gameOver">
-        <button class="btn btn-light" onclick="Reset()">Rejouer</button>
+        <button onclick="reset()">Rejouer</button>
         <h1 id="gameOverMessage">GAME OVER</h1>
     </div>
 
