@@ -87,10 +87,13 @@
         </div>
 
         <div id="btnDirection">
-            <button onclick="leftButton()">Gauche</button>
-
-            <button onclick="rightButton()">Droite</button>
+            <button id="btnGauche" onclick="leftButton()">Gauche</button>
+            <div id="divPause">
+                <button id="btnPause" onclick="pause()">Pause</button>
+            </div>
+            <button id="btnDroite" onclick="rightButton()">Droite</button>
         </div>
+
     </div>
 
     <div id="gameOver">

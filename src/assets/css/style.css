@@ -58,8 +58,14 @@ button:hover {
 }
 
 #btnDirection {
-    display: none 
+    display: none;
+    justify-content: center;
+    flex-direction: row;
 } 
+
+#btnPause {
+    visibility: hidden;
+}
 
 #displayZone {
     /* visibility: hidden; */

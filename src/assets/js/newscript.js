@@ -5,17 +5,18 @@ let caca = "./src/assets/img/caca.png";
 let player = "./src/assets/img/pigeon.gif";
 let isItEnd = false;
 let isItIA = false;
+var min = 0;
+var secs = 0;
 
 
 function start() {
-    game = new SweatyPromoClient.offline()
     game.start();
     game.play();
-    timer()
-
     document.getElementById('btnFormat').style.display = 'none'
     document.getElementById('displayZone').style.visibility = 'visible'
+    document.getElementById('btnPause').style.visibility = 'visible'
     game.on('matrix', (matrix) => {
+        timer()
         for (let x = 0; x < matrix.length; x++) {
             for (let y = 0; y < matrix[x].length; y++) {
                 if (x == 7 && y == game.getPosition()) {
@@ -26,28 +27,18 @@ function start() {
                     document.getElementById(x).getElementsByClassName(y)[0].src = vide;
                 }
                 if (isItIA == true) {
-                    if (matrix[6][game.getPosition()] == 1 && game.getPosition() == 0) {
-                        console.log("tout à gauche");
+                    if (matrix[7][game.getPosition()] == 1 && game.getPosition() == 0) {
                         rightButton();
-                    } else if (matrix[6][game.getPosition()] == 1 && matrix[6][game.getPosition() - 1] == 0) {
-                        console.log("1");
-
+                    } else if (matrix[7][game.getPosition()] == 1 && matrix[7][game.getPosition() - 1] == 0) {
                         leftButton();
-                    } else if (matrix[6][game.getPosition()] == 1 && matrix[6][game.getPosition() - 1] == 1) {
-                        console.log("2");
-
+                    } else if (matrix[7][game.getPosition()] == 1 && matrix[7][game.getPosition() - 1] == 1) {
                         rightButton();
-                    } else if (matrix[6][game.getPosition()] == 1 && matrix[6][game.getPosition() + 1] == 1) {
-                        console.log("3");
-
+                    } else if (matrix[7][game.getPosition()] == 1 && matrix[7][game.getPosition() + 1] == 1) {
                         leftButton();
-                    } else if (matrix[6][game.getPosition()] == 1 && matrix[6][game.getPosition() + 1] == 0) {
-                        console.log("4");
-
+                    } else if (matrix[7][game.getPosition()] == 1 && matrix[7][game.getPosition() + 1] == 0) {
                         leftButton();
                     }
                 }
-                console.log(matrix);
             }
         }
 
@@ -60,39 +51,71 @@ function start() {
             game.pause()
             console.log('perdu')
         })
-
         isItEnd = false
-
     })
 }
 
 function buttonJouer() {
-    document.getElementById('btnDirection').style.display = 'block'
-    start()
+    document.getElementById('btnDirection').style.display = 'flex';
+    document.getElementById('btnGauche').style.visibility = 'visible'
+    document.getElementById('btnDroite').style.visibility = 'visible'
+    start();
+    isItIA = false;
+    document.onkeydown = function () {
+        switch (window.event.keyCode) {
+            case 37:
+                game.left()
+                break;
+            case 39:
+                game.right()
+                break;
+        }
+    }
 }
 
 function buttonIA() {
+    document.getElementById('btnDirection').style.display = 'flex'
+    document.getElementById('btnGauche').style.visibility = 'hidden'
+    document.getElementById('btnDroite').style.visibility = 'hidden'
     start();
     isItIA = true;
 }
 
-function timer() {
-    var secs = 0;
-    var min = 0;
-    var timer = setInterval(function () {
-        document.getElementById('score').innerHTML = `Temps : ${min}m ${secs++}s`;
-        if (secs == 60) {
-            secs = 0
-            min++;
-        }
-        if (isItEnd == true) {
-            clearInterval(timer)
-            secs = 0;
-            min = 0;
-        }
-    }, 1000);
-};
+function leftButton() {
+    game.left()
+    // document.querySelector("img[src='./src/assets/img/pigeon.gif']").style.transform = "scaleX(-1)";
+}
 
+function rightButton() {
+    game.right()
+    // document.querySelector("img[src='./src/assets/img/pigeon.gif']").style.transform = "scaleX(1)";
+}
+
+function pause() {
+    game.pause();
+    document.getElementById("divPause").removeChild(document.getElementById("btnPause"));
+    document.getElementById("divPause").innerHTML = `<button id="btnPlay" onclick="play()">Continuer</button>`;
+}
+
+function play() {
+    game.play();
+    document.getElementById("divPause").removeChild(document.getElementById("btnPlay"));
+    document.getElementById("divPause").innerHTML = `<button id="btnPause" onclick="pause()">Pause</button>`;
+    document.getElementById("btnPause").style.visibility = "visible"
+}
+
+function timer() {
+    document.getElementById('score').innerHTML = `Temps : ${min}m ${secs++}s`;
+    if (secs == 60) {
+        secs = 0
+        min++;
+    }
+    if (isItEnd == true) {
+        clearInterval(timer)
+        secs = 0;
+        min = 0;
+    }
+}
 
 function reset() {
     document.getElementById('btnFormat').style.display = 'block'
@@ -100,15 +123,4 @@ function reset() {
     document.getElementById('displayZone').style.visibility = 'hidden'
     document.getElementById('gameOver').style.display = 'none'
     document.getElementById('score').innerHTML = `La promo en sueur`
-}
-
-
-function leftButton() {
-    game.left()
-    document.querySelector("img[src='./src/assets/img/pigeon.gif']").style.transform = "scaleX(-1)";
-}
-
-function rightButton() {
-    game.right()
-    document.querySelector("img[src='./src/assets/img/pigeon.gif']").style.transform = "scaleX(1)";
 }
