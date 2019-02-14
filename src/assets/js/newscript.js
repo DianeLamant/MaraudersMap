@@ -37,6 +37,12 @@ function start() {
                         leftButton();
                     } else if (matrix[7][game.getPosition()] == 1 && matrix[7][game.getPosition() + 1] == 0) {
                         leftButton();
+                    } else if (game.getPosition() == 0 && matrix[7][game.getPosition() + 1] == 0) {
+                        rightButton();
+                    } else if (game.getPosition() == 1 && matrix[7][game.getPosition() + 1] == 0) {
+                        rightButton();
+                    } else if (matrix[6][game.getPosition() + 1] == 1 && matrix[6][game.getPosition() - 1] == 1 && matrix[6][game.getPosition() == 1]) {
+                        rightButton()
                     }
                 }
             }
