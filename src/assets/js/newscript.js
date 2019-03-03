@@ -5,7 +5,6 @@ let footprints1 = "./src/assets/img/human-shoes-footprints.png";
 let footprints2 = "./src/assets/img/human-shoes-footprints-reverse.png";
 let footprints = [footprints1, footprints2];
 let player = "./src/assets/img/footprints.png";
-const wherePlayer = document.querySelector("img[src='./src/assets/img/footprints.png']");
 let isItEnd = false;
 let isItIA = false;
 var min = 0;
@@ -96,8 +95,6 @@ function buttonIA() {
 
 function leftButton() {
     game.left();
-    document.querySelector("img[src='./src/assets/img/footprints.png']").classList.remove("rereverse");
-    document.querySelector("img[src='./src/assets/img/footprints.png']").classList.add("reverse");
 }
 
 function rightButton() {

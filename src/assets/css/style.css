@@ -90,42 +90,6 @@ button:hover {
     transform: scaleX(-1);
 }
 
-@-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
 @keyframes unzoom {
     0% {
       transform: scale(6);
@@ -153,13 +117,8 @@ button:hover {
         font-size: 4.5rem;
     }
 
-    .row img {
-        /* width: 70px;  */
-    }
-
     button {
         font-size: 3.5rem;
-        /* width: 200px; */
     }
 }
 
