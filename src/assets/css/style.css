@@ -1,12 +1,17 @@
+/* html, body {
+    margin: 0;
+    height: 100%;
+} */
+
 body {
-    font-family: 'Teko', sans-serif;
+    font-family: 'Jim Nightshade', cursive;
     text-align: center;
     color: #fff;
-	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
+    background: url("../img/maraudersmap1.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h3 {
@@ -16,10 +21,9 @@ h3 {
 button {
     font-size: 2rem;
     margin: 15px 15px;
-    width: 100px;
-    background-color: white;
-    color: rgb(140, 96, 175);
-    border: 1px solid rgb(140, 96, 175);
+    background-color: rgb(117, 42, 46);
+    color: white;
+    border: 1px solid rgb(117, 42, 46);
     border-radius: 7px;
     cursor: pointer;
     padding: 3px 0;
@@ -27,34 +31,25 @@ button {
 
 button:hover {
     color: white;
-    background-color: rgb(140, 96, 175);
-    border-color: rgb(140, 96, 175);
+    background-color: rgb(75, 27, 29);
+    border-color: rgb(75, 27, 29);
 }
 
-#gameOver button {
-    background-color: transparent;
-    color: rgb(51, 35, 67);
-    border-color: rgb(51, 35, 67);
-}
-
-#gameOver button:hover {
-    background-color: white;
-    color: rgb(140, 96, 175);
-    border-color: rgb(140, 96, 175);
-}
-
-#game {
-    background-color: white;
-    width: 530px;
-    height: auto;
+#game, #gameOver {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(117, 42, 46, 0.7);
+    width: 40%;
     margin: auto;
     justify-content: center;
     border-radius: 10px;
-    border: 10px solid grey;
 }
 
 .row {
     justify-content: center;
+}
+
+.row img {
+    width: 50px; 
 }
 
 #btnDirection {
@@ -73,15 +68,26 @@ button:hover {
 }
 
 #gameOver {
-    padding-top: 10%;
     display: none;
 }
 
+#gameOver button {
+    margin-top: 10%;
+}
+
 #gameOverMessage {
+    color: rgb(112, 41, 45);
+    text-shadow: 3px -3px rgb(37, 14, 15);
     font-size: 8rem;
     padding-top: 30px;
 }
 
+.reverse {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
 
 @-webkit-keyframes Gradient {
 	0% {
@@ -138,33 +144,31 @@ button:hover {
 }
 
 @media screen and (max-width: 798px) {
-    #game {
-        width: auto;
-        height: auto;
+    #game, #gameOver {
+        width: 70%;
     }
 
     h3 {
         font-size: 4.5rem;
     }
 
-    img {
-        width: 100px;
+    .row img {
+        width: 70px; 
     }
 
     button {
         font-size: 3.5rem;
         width: 200px;
     }
-
-    #gameOver {
-        padding-top: 25%;
-    }
-    
 }
 
 @media screen and (max-width: 425px) {
     body {
         width: 600px;
+    }
+
+    #game, #gameOver {
+        width: 90%;
     }
 
     h3 {
@@ -180,13 +184,8 @@ button:hover {
         width: 20%;
     }
 
-    img {
-        width: 100%;
-    }
-
     button {
-        font-size: 6rem;
-        width: 200px;
+        font-size: 3rem;
     }
 
     #btnFormat button {
