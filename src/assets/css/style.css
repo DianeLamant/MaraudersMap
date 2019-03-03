@@ -15,11 +15,12 @@ body {
 }
 
 h3 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 button {
-    font-size: 2rem;
+    font-size: 3rem;
+    width: 150px;
     margin: 15px 15px;
     background-color: rgb(117, 42, 46);
     color: white;
@@ -49,7 +50,7 @@ button:hover {
 }
 
 .row img {
-    width: 50px; 
+    width: 70px; 
 }
 
 #btnDirection {
@@ -153,12 +154,12 @@ button:hover {
     }
 
     .row img {
-        width: 70px; 
+        /* width: 70px;  */
     }
 
     button {
         font-size: 3.5rem;
-        width: 200px;
+        /* width: 200px; */
     }
 }
 
@@ -172,7 +173,7 @@ button:hover {
     }
 
     h3 {
-        font-size: 7rem;
+        font-size: 5rem;
     }
 
     .row {
