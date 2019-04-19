@@ -136,7 +136,7 @@ function reset() {
 }
 
 function footPrintsWalking() {
-    let whereFootPrints =  document.querySelectorAll("img[src='./src/assets/img/human-shoes-footprints.png']");
+    let whereFootPrints = document.querySelectorAll("img[src='./src/assets/img/human-shoes-footprints.png']");
     let whereFootPrintsRev = document.querySelectorAll("img[src='./src/assets/img/human-shoes-footprints-reverse.png']");
     for (let theresFootPrints of whereFootPrints) {
         if (whereFootPrints.length > 1 && theresFootPrints.classList.contains("reverse")) {
@@ -155,7 +155,7 @@ function footPrintsWalking() {
 }
 
 function playersWalking() {
-    let wherePlayer =  document.querySelector("img[src='./src/assets/img/footprints.png']");
+    let wherePlayer = document.querySelector("img[src='./src/assets/img/footprints.png']");
     if (wherePlayer.classList.contains("reverse")) {
         wherePlayer.classList.remove("reverse");
     } else {
